@@ -1,6 +1,7 @@
 package com.anonymous.mentalcare.models;
 
 import com.anonymous.mentalcare.dto.PostDto;
+import com.anonymous.mentalcare.security.UserDetailsImpl;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -41,14 +42,8 @@ public class Post {
         this.getCommentList().add(comment);
     }
 
-    public Post(PostDto.PostWrittenRequestDto postWrittenRequestDto){
-        //난중에 userDetails user 넣어줘야함
-        User user = User.builder()
-                .userId("jybin96")
-                .password("asdasdasd")
-                .build();
-        //
-        this.user = user;
+    public Post(PostDto.PostWrittenRequestDto postWrittenRequestDto, UserDetailsImpl userDetails){
+        this.user = userDetails.getUser();
         this.title = postWrittenRequestDto.getTitle();
         this.content = postWrittenRequestDto.getContent();
         this.commentList = null;
