@@ -30,8 +30,8 @@ public class UserController {
 
     @ApiOperation(value = "기본 로그인")
     @PostMapping("/api/login")
-    public String login() {
-        return "ok";
+    public String login(@RequestBody SignupRequestDto requestDto) {
+        return userService.login(requestDto);
     }
 
     @GetMapping("/api/islogin")
@@ -43,8 +43,6 @@ public class UserController {
         }
     }
 
-//    @PostMapping("/api/login")
-//    public String login(@RequestBody SignupRequestDto requestDto) {
-//        return userService.login(requestDto);
+
 //    }
 }
