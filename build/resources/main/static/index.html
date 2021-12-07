@@ -45,7 +45,11 @@
                 password: $('#password').val()
             }),
             success: function (response, textStatus, request) {
+                console.log(response);
+                console.log(request);
+                console.log(textStatus);
                 const jwtToken = request.getResponseHeader("Authorization");
+                console.log(jwtToken);
 
                 if (jwtToken) {
                     $.cookie("token", jwtToken);
@@ -54,9 +58,6 @@
                             'Authorization': $.cookie('token', jwtToken, { path: '/' })
                         }
                     });
-                    window.location.href = '/';
-                } else {
-                    window.location.href = '/user/loginView?error';
                 }
             }
         })
