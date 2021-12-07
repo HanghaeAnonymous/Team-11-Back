@@ -1,15 +1,24 @@
 package com.anonymous.mentalcare.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Getter
 @NoArgsConstructor
-public class User {
+@AllArgsConstructor
+public class User  {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -38,4 +47,17 @@ public class User {
         comment.setUser(this);
         this.getCommentList().add(comment);
     }
+
+    @Builder
+    public User(String userId, String password) {
+        this.userId = userId;
+        this.password = password;
+    }
+
+    public User update(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+
 }
