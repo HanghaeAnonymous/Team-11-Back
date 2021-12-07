@@ -18,7 +18,7 @@ public class FeedController {
 //        return feedService.getFeed(userId);
 //    }
 
-    @GetMapping("/feeds")
+    @GetMapping("/api/feeds")
     public FeedResponseDto getFeed(@AuthenticationPrincipal UserDetailsImpl userDetails){
         return feedService.getFeed(userDetails.getUser());
     }
