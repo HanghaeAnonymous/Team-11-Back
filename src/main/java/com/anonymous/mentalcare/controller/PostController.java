@@ -2,6 +2,7 @@ package com.anonymous.mentalcare.controller;
 
 import com.anonymous.mentalcare.dto.PostDto;
 import com.anonymous.mentalcare.dto.PostResponseDto;
+import com.anonymous.mentalcare.dto.RandomPostResponseDto;
 import com.anonymous.mentalcare.models.Post;
 import com.anonymous.mentalcare.security.UserDetailsImpl;
 import com.anonymous.mentalcare.service.PostService;
@@ -15,8 +16,8 @@ public class PostController {
     private final PostService postService;
 
     @GetMapping("/api/posts")
-    public PostResponseDto getRandomPost(){
-        return postService.getRandomPost();
+    public RandomPostResponseDto getRandomPost(@AuthenticationPrincipal UserDetailsImpl userDetails){
+        return postService.getRandomPost(userDetails.getUser());
     }
 
     @PostMapping("/api/posts")//난중에 userDetails로 User도 같이 넣어줘야함 일단 테스트 용도로 User빼고 작성
