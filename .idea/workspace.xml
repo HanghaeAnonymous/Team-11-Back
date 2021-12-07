@@ -4,7 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c19aa68-d760-4a70-86b5-aec9d965e397" name="Changes" comment="" />
+    <list default="true" id="2c19aa68-d760-4a70-86b5-aec9d965e397" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/User/HeaderDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/User/SignupRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/User/UserDetailResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/jwt/ApiRequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/jwt/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/jwt/JwtTokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/security/SwaggerConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/repository/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/repository/PostRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/repository/ReadingPostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/repository/ReadingPostRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/service/PostService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/PostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/models/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/repository/ReadingPostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/repository/ReadingPostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/service/PostService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,15 +60,30 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\asdfj\Desktop\sparta\teamprojects\anonymous\src\main\java\com\anonymous\mentalcare" />
+      <recent name="C:\Users\asdfj\Desktop\sparta\teamprojects\anonymous\src\main\java\com\anonymous\mentalcare\dto" />
+      <recent name="C:\Users\asdfj\Desktop\sparta\teamprojects\anonymous\src\main\java\com\anonymous\mentalcare\security" />
       <recent name="C:\Users\asdfj\Desktop\sparta\teamprojects\anonymous\src\main\java\com\anonymous\mentalcare\models" />
       <recent name="C:\Users\asdfj\Desktop\sparta\teamprojects\anonymous\src\main\java\com\anonymous\mentalcare\repository" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.anonymous.mentalcare.models" />
+      <recent name="com.anonymous.mentalcare.controller" />
+      <recent name="com.anonymous.mentalcare.service" />
+      <recent name="com.anonymous.mentalcare.repository" />
     </key>
   </component>
   <component name="RunManager">
@@ -56,6 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1638842696566</updated>
       <workItem from="1638842698871" duration="338000" />
+      <workItem from="1638856190315" duration="1542000" />
     </task>
     <servers />
   </component>
@@ -72,5 +121,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

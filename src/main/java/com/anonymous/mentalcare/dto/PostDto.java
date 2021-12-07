@@ -9,7 +9,7 @@ public class PostDto {
     @Getter
     @Setter
     @NoArgsConstructor
-    public static class PostWrittenReqeustDto{
+    public static class PostWrittenRequestDto{
         private String title;
         private String content;
     }

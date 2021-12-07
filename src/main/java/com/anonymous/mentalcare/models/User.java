@@ -1,19 +1,16 @@
 package com.anonymous.mentalcare.models;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
@@ -28,13 +25,13 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "user")
-    private List<Post> postList;
+    private List<Post> postList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
-    private List<Comment> commentList;
+    private List<Comment> commentList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
-    private List<ReadingPost> readingPostList;
+    private List<ReadingPost> readingPostList = new ArrayList<>();
 
     public void addPost(Post post) {
         post.setUser(this);
@@ -44,5 +41,16 @@ public class User {
     public void addComment(Comment comment){
         comment.setUser(this);
         this.getCommentList().add(comment);
+    }
+
+    @Builder
+    public User(String userId, String password) {
+        this.userId = userId;
+        this.password = password;
+    }
+
+    public User update(String userId) {
+        this.userId = userId;
+        return this;
     }
 }

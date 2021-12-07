@@ -41,19 +41,16 @@ public class Post {
         this.getCommentList().add(comment);
     }
 
-    public Post(PostDto.PostWrittenReqeustDto postWrittenReqeustDto){
+    public Post(PostDto.PostWrittenRequestDto postWrittenRequestDto){
         //난중에 userDetails user 넣어줘야함
         User user = User.builder()
                 .userId("jybin96")
                 .password("asdasdasd")
-                .postList(null)
-                .commentList(null)
-                .readingPostList(null)
                 .build();
         //
         this.user = user;
-        this.title = postWrittenReqeustDto.getTitle();
-        this.content = postWrittenReqeustDto.getContent();
+        this.title = postWrittenRequestDto.getTitle();
+        this.content = postWrittenRequestDto.getContent();
         this.commentList = null;
         this.readingPostList = null;
     }
