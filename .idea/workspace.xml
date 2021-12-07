@@ -32,6 +32,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/models" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\asdfj\Desktop\sparta\teamprojects\anonymous\src\main\java\com\anonymous\mentalcare\models" />
+      <recent name="C:\Users\asdfj\Desktop\sparta\teamprojects\anonymous\src\main\java\com\anonymous\mentalcare\repository" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="AnonymousApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mentalcare.main" />
