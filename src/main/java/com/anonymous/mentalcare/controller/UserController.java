@@ -1,5 +1,7 @@
 package com.anonymous.mentalcare.controller;
 
+import com.anonymous.mentalcare.dto.User.IdCheckRequestDto;
+import com.anonymous.mentalcare.dto.User.IdCheckResponseDto;
 import com.anonymous.mentalcare.dto.User.SignupRequestDto;
 import com.anonymous.mentalcare.dto.User.UserDetailResponseDto;
 import com.anonymous.mentalcare.models.User;
@@ -28,12 +30,6 @@ public class UserController {
         userService.registerUser(requestDto);
     }
 
-    @ApiOperation(value = "기본 로그인")
-    @PostMapping("/api/login")
-    public String login(@RequestBody SignupRequestDto requestDto) {
-        return userService.login(requestDto);
-    }
-
     @GetMapping("/api/islogin")
     public UserDetailResponseDto isLogin(@AuthenticationPrincipal UserDetailsImpl userDetails){
         if(userDetails == null){
@@ -43,6 +39,13 @@ public class UserController {
         }
     }
 
+    @PostMapping("/api/idCheck")
+    public IdCheckResponseDto idCheck(@RequestBody IdCheckRequestDto idCheckRequestDto){
+        return userService.idCheck(idCheckRequestDto);
+    }
 
-//    }
+    @PostMapping("/api/test")
+    public String test(){
+        return "test";
+    }
 }
