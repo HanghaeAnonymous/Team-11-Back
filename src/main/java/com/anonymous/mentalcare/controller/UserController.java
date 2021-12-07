@@ -43,4 +43,9 @@ public class UserController {
     public IdCheckResponseDto idCheck(@RequestBody IdCheckRequestDto idCheckRequestDto){
         return userService.idCheck(idCheckRequestDto);
     }
+
+    @PostMapping("/api/test")
+    public String test(){
+        return "test";
+    }
 }

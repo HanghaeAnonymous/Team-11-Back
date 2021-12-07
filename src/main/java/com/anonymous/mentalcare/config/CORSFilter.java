@@ -1,4 +1,4 @@
-package com.anonymous.mentalcare.security;
+package com.anonymous.mentalcare.config;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +9,6 @@ public class CORSFilter implements Filter {@Override
 public void init(FilterConfig filterConfig) throws ServletException {
 
 }
-
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
             throws IOException, ServletException {
