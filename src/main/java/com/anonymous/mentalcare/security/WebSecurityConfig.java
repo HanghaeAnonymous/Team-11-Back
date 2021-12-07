@@ -5,7 +5,6 @@ import com.anonymous.mentalcare.security.filter.JwtAuthFilter;
 import com.anonymous.mentalcare.security.jwt.HeaderTokenExtractor;
 import com.anonymous.mentalcare.security.provider.FormLoginAuthProvider;
 import com.anonymous.mentalcare.security.provider.JWTAuthProvider;
-import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,15 +27,18 @@ import java.util.List;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     //JWT 부분 시작
+//    private final JwtTokenProvider jwtTokenProvider;
     private final JWTAuthProvider jwtAuthProvider;
     private final HeaderTokenExtractor headerTokenExtractor;
 
     public WebSecurityConfig(
             JWTAuthProvider jwtAuthProvider,
             HeaderTokenExtractor headerTokenExtractor
+//            JwtTokenProvider jwtTokenProvider
     ) {
         this.jwtAuthProvider = jwtAuthProvider;
         this.headerTokenExtractor = headerTokenExtractor;
+//        this.jwtTokenProvider = jwtTokenProvider;
     }
     //JWT부분 종료
 
@@ -92,11 +94,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 // 로그아웃 요청 처리 URL
                 .logoutUrl("/api/logout")
-                .permitAll()
-                .and()
-                .exceptionHandling()
-                // "접근 불가" 페이지 URL 설정
-                .accessDeniedPage("/forbidden.html");
+                .permitAll();
     }
 
     @Bean
