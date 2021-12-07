@@ -9,6 +9,7 @@ import com.anonymous.mentalcare.models.ReadingPost;
 import com.anonymous.mentalcare.models.User;
 import com.anonymous.mentalcare.repository.PostRepository;
 import com.anonymous.mentalcare.repository.ReadingPostRepository;
+import com.anonymous.mentalcare.security.UserDetailsImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -59,8 +60,8 @@ public class PostService {
         return new MyPostResponseDto(post.get());
     }
 
-    public Post savePostService(PostDto.PostWrittenRequestDto postWrittenRequestDto){
-        Post post = new Post(postWrittenRequestDto);
+    public Post savePostService(PostDto.PostWrittenRequestDto postWrittenRequestDto, UserDetailsImpl userDetails){
+        Post post = new Post(postWrittenRequestDto,userDetails);
         postRepository.save(post);
         return post;
     }
