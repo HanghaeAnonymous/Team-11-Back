@@ -1,8 +1,9 @@
 package com.anonymous.mentalcare.service;
 
 
+import com.anonymous.mentalcare.dto.User.IdCheckRequestDto;
+import com.anonymous.mentalcare.dto.User.IdCheckResponseDto;
 import com.anonymous.mentalcare.dto.User.SignupRequestDto;
-import com.anonymous.mentalcare.security.provider.JwtTokenProvider;
 import com.anonymous.mentalcare.models.User;
 import com.anonymous.mentalcare.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,15 +19,12 @@ import java.util.regex.Pattern;
 @Service
 public class UserService {
     private final UserRepository userRepository;
-    private final JwtTokenProvider jwtTokenProvider;
     private final PasswordEncoder passwordEncoder;
-    private String secretKey = "hanghae";
 
 
     @Transactional
     public String registerUser(SignupRequestDto signupRequestDto) {
         String username = signupRequestDto.getUsername();
-        User sameNameUser = userRepository.findByUserId(username).orElse(null);
         String errorMessage = "";
 
         // 회원 ID 중복 확인
@@ -47,6 +45,7 @@ public class UserService {
 //            throw new IllegalArgumentException(errorMessage);
             return errorMessage;
         }
+
         if (!signupRequestDto.getPassword().equals(signupRequestDto.getPasswordCheck())) {
             errorMessage = "비밀번호가 일치하지 않습니다.";
             return errorMessage;
@@ -59,23 +58,10 @@ public class UserService {
         userRepository.save(user);
         return errorMessage;
     }
-    @Transactional
-    public String login(SignupRequestDto requestDto) {
-        User user = userRepository.findByUserId(requestDto.getUsername())
-                .orElseThrow(() -> new IllegalArgumentException("가입되지 않은 유저입니다."));
-        if (!passwordEncoder.matches(requestDto.getPassword(), user.getPassword())) {
-            throw new IllegalArgumentException("잘못된 비밀번호입니다.");
-        }
-        return jwtTokenProvider.createToken( user.getUserId(), "");
-    }
 
-
-//    @Transactional
-//    public boolean idCheck(String userId){
-//        Optional<User> user = userRepository.findByUserId(userId);
-//        if(user.isPresent()){
-//            return false;
-//        }
-//        return true;
-//    }
+    public IdCheckResponseDto idCheck(IdCheckRequestDto idCheckRequestDto) {
+        Optional<User> user = userRepository.findByUserId(idCheckRequestDto.getUsername());
+        // isPresent = true 일 때 = 중복, false 출력
+        return new IdCheckResponseDto(!user.isPresent());
     }
+}
