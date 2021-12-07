@@ -1,6 +1,7 @@
 package com.anonymous.mentalcare.controller;
 
 import com.anonymous.mentalcare.dto.User.SignupRequestDto;
+import com.anonymous.mentalcare.dto.User.UserDetailResponseDto;
 import com.anonymous.mentalcare.models.User;
 import com.anonymous.mentalcare.security.UserDetailsImpl;
 import com.anonymous.mentalcare.service.UserService;
@@ -34,12 +35,11 @@ public class UserController {
     }
 
     @GetMapping("/api/islogin")
-    public User isLogin(@AuthenticationPrincipal UserDetailsImpl userDetails){
-        System.out.println(userDetails);
+    public UserDetailResponseDto isLogin(@AuthenticationPrincipal UserDetailsImpl userDetails){
         if(userDetails == null){
             return null;
         }else{
-            return userDetails.getUser();
+            return new UserDetailResponseDto(userDetails.getUsername());
         }
     }
 

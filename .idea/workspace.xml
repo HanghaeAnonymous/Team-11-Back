@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c19aa68-d760-4a70-86b5-aec9d965e397" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/UserController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/User/HeaderDto.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/User/SignupRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/User/UserDetailResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/User/UserInfoDto.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/jwt/ApiRequestException.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/jwt/JwtAuthenticationFilter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/jwt/JwtTokenProvider.java" afterDir="false" />
@@ -30,7 +29,9 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/service/PostService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/PostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/User/UserDetailResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/User/UserDetailResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/models/Post.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/repository/PostRepository.java" afterDir="false" />
@@ -47,6 +48,13 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -104,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1638842696566</updated>
       <workItem from="1638842698871" duration="338000" />
-      <workItem from="1638856190315" duration="1542000" />
+      <workItem from="1638856190315" duration="2826000" />
     </task>
     <servers />
   </component>

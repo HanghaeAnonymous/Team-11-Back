@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class UserDetailResponseDto {
-    private String name;
+    private UserInfoDto userInfo;
+
 
     @Builder
-    public UserDetailResponseDto(String name) {
-        this.name = name;
-
+    public UserDetailResponseDto(String username) {
+        this.userInfo = new UserInfoDto(username);
     }
 }
