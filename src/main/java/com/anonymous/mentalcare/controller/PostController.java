@@ -17,17 +17,18 @@ public class PostController {
 
     @GetMapping("/api/posts")
     public RandomPostResponseDto getRandomPost(@AuthenticationPrincipal UserDetailsImpl userDetails){
+        System.out.println(userDetails);
         return postService.getRandomPost(userDetails.getUser());
     }
 
     @PostMapping("/api/posts")//난중에 userDetails로 User도 같이 넣어줘야함 일단 테스트 용도로 User빼고 작성
-    public Post savePost(@RequestBody PostDto.PostWrittenReqeustDto postWrittenReqeustDto){
-        return postService.savePostService(postWrittenReqeustDto);
+    public Post savePost(@RequestBody PostDto.PostWrittenRequestDto postWrittenRequestDto){
+        return postService.savePostService(postWrittenRequestDto);
     }
 
     @PutMapping("/api/posts/{postId}")
     public String updatePost(@PathVariable Long postId, @RequestBody PostDto.PostUpdateRequestDto postUpdateRequestDto){
-        return postService.updataePostService(postId,postUpdateRequestDto);
+        return postService.updatePostService(postId,postUpdateRequestDto);
     }
 
     @DeleteMapping("/api/posts/{postId}")

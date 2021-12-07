@@ -15,6 +15,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -30,16 +31,21 @@ public class PostService {
         long qty = postRepository.count();
         int idx = (int)(Math.random() * qty);
 
+        List<ReadingPost> readingPostList = readingPostRepository.findAllByUser(user);
+        System.out.println("초반부");
         Page<Post> postPage = postRepository.findAll(PageRequest.of(idx, 1));
-
+        postRepository.findAll(PageRequest.of(1,1));
+        System.out.println("postPage 탐색");
         RandomPostResponseDto randomPostResponseDto = null;
         if (postPage.hasContent()) {
+            System.out.println("postPage.hasContent");
             // 볼 수 있는 포스트가 있는 경우 postResponseDto 채워주고 반환.
             // 포스트가 더이상 없을 경우 null 반환.
             Post post = postPage.getContent().get(0);
             randomPostResponseDto = new RandomPostResponseDto(post);
             readingPostRepository.save(new ReadingPost(user, post));
         }
+        System.out.println("postPage.hasn't Content");
 
         return randomPostResponseDto;
     }
@@ -53,8 +59,8 @@ public class PostService {
         return new MyPostResponseDto(post.get());
     }
 
-    public Post savePostService(PostDto.PostWrittenReqeustDto postWrittenReqeustDto){
-        Post post = new Post(postWrittenReqeustDto);
+    public Post savePostService(PostDto.PostWrittenRequestDto postWrittenRequestDto){
+        Post post = new Post(postWrittenRequestDto);
         postRepository.save(post);
         return post;
     }
@@ -64,10 +70,9 @@ public class PostService {
     }
 
     @Transactional
-    public String updataePostService(Long postId, PostDto.PostUpdateRequestDto postUpdateRequestDto){
+    public String updatePostService(Long postId, PostDto.PostUpdateRequestDto postUpdateRequestDto){
         Post findByIdPost = postRepository.findByPostId(postId).orElseThrow(()-> new IllegalArgumentException("찾는 포스트가 없습니다."));
         findByIdPost.updatePost(postUpdateRequestDto);
         return findByIdPost.getContent();
     }
-
 }
