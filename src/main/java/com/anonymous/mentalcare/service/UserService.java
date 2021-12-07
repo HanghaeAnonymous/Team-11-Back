@@ -2,7 +2,7 @@ package com.anonymous.mentalcare.service;
 
 
 import com.anonymous.mentalcare.dto.User.SignupRequestDto;
-import com.anonymous.mentalcare.jwt.JwtTokenProvider;
+import com.anonymous.mentalcare.security.provider.JwtTokenProvider;
 import com.anonymous.mentalcare.models.User;
 import com.anonymous.mentalcare.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
