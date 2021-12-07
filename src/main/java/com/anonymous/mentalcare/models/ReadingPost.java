@@ -1,6 +1,5 @@
 package com.anonymous.mentalcare.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,4 +22,9 @@ public class ReadingPost {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(nullable = false)
     private Post post;
+
+    public ReadingPost(User user, Post post) {
+        this.user = user;
+        this.post = post;
+    }
 }
