@@ -16,6 +16,10 @@ import java.util.regex.Pattern;
 
 @RequiredArgsConstructor
 @Service
+public class UserService {
+    private final UserRepository userRepository;
+    private final JwtTokenProvider jwtTokenProvider;
+    private final PasswordEncoder passwordEncoder;
     private String secretKey = "hanghae";
 
 
