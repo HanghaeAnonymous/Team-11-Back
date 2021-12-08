@@ -12,11 +12,26 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/controller/CommentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/controller/FeedController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/controller/FeedController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/controller/PostController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/security/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/service/CommentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/service/FeedService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/service/FeedService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/anonymous/mentalcare/service/PostService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/FeedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/FeedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/FeedResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/FeedResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/MyPostResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/MyPostResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/RandomPostResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/RandomPostResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/service/FeedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/service/FeedService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +127,7 @@
       <recent name="com.anonymous.mentalcare.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.anonymous [build]">
+  <component name="RunManager" selected="Spring Boot.AnonymousApplication">
     <configuration name="AnonymousApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -164,8 +179,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.anonymous [build]" />
         <item itemvalue="Spring Boot.AnonymousApplication" />
+        <item itemvalue="Gradle.anonymous [build]" />
         <item itemvalue="Gradle.AnonymousApplicationTests" />
       </list>
     </recent_temporary>

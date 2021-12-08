@@ -19,12 +19,10 @@ public class RandomPostResponseDto {
     private String content;
     private List<RandomPostCommentResponseDto> comments;
 
-    public RandomPostResponseDto(Post post) {
+    public RandomPostResponseDto(Post post, List<RandomPostCommentResponseDto> comments) {
         this.postId = post.getPostId();
         this.title = post.getTitle();
         this.content = post.getContent();
-        for(Comment comment:post.getCommentList()){
-            this.comments.add(new RandomPostCommentResponseDto(comment));
-        }
+        this.comments = comments;
     }
 }

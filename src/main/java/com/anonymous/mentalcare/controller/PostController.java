@@ -1,5 +1,6 @@
 package com.anonymous.mentalcare.controller;
 
+import com.anonymous.mentalcare.dto.MyPostResponseDto;
 import com.anonymous.mentalcare.dto.PostDto;
 import com.anonymous.mentalcare.dto.PostResponseDto;
 import com.anonymous.mentalcare.dto.RandomPostResponseDto;
@@ -18,10 +19,17 @@ import org.springframework.web.bind.annotation.*;
 public class PostController {
     private final PostService postService;
 
+    @ApiOperation(value = "랜덤 게시글 불러오기")
     @GetMapping("/api/posts")
     public RandomPostResponseDto getRandomPost(@AuthenticationPrincipal UserDetailsImpl userDetails){
-        System.out.println(userDetails);
         return postService.getRandomPost(userDetails.getUser());
+    }
+
+    @ApiOperation(value = "나의 특정 게시글 불러오기")
+    @GetMapping("/api/posts/{postId}")
+    public MyPostResponseDto getMyPost(@PathVariable Long postId,
+                                       @AuthenticationPrincipal UserDetailsImpl userDetails){
+        return postService.getMyPost(postId, userDetails.getUser());
     }
 
     @ApiOperation(value = "게시판 글 올리기")
@@ -30,11 +38,13 @@ public class PostController {
         return postService.savePostService(postWrittenRequestDto,userDetails);
     }
 
+    @ApiOperation(value = "게시판 글 수정")
     @PutMapping("/api/posts/{postId}")
     public String updatePost(@PathVariable Long postId, @RequestBody PostDto.PostUpdateRequestDto postUpdateRequestDto){
         return postService.updatePostService(postId,postUpdateRequestDto);
     }
 
+    @ApiOperation(value = "게시판 글 삭제")
     @DeleteMapping("/api/posts/{postId}")
     public void deletePost(@PathVariable Long postId){
         postService.deletePost(postId);

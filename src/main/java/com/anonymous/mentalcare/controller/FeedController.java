@@ -20,6 +20,7 @@ public class FeedController {
 
     @GetMapping("/api/feeds")
     public FeedResponseDto getFeed(@AuthenticationPrincipal UserDetailsImpl userDetails){
+        System.out.println(userDetails.getUser().getUserId());
         return feedService.getFeed(userDetails.getUser());
     }
 }

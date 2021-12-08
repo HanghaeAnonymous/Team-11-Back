@@ -15,12 +15,8 @@ public class FeedResponseDto {
     List<FeedPostResponseDto> myPosts;
     List<FeedCommentResponseDto> myComments;
 
-    public FeedResponseDto(List<Post> postList, List<Comment> commentList) {
-        for(Post post : postList){
-            this.myPosts.add(new FeedPostResponseDto(post));
-        }
-        for(Comment comment: commentList){
-            this.myComments.add(new FeedCommentResponseDto(comment));
-        }
+    public FeedResponseDto(List<FeedPostResponseDto> postList, List<FeedCommentResponseDto> commentList) {
+        this.myPosts = postList;
+        this.myComments = commentList;
     }
 }

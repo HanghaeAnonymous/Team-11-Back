@@ -26,6 +26,8 @@
 
         <button id="postBtn" onclick="post()">글쓰기</button>
 
+        <button id="btn" onclick="comment()">댓글 작성</button>
+
         <button id="tn" onclick="islogin()">접속확인</button>
     </div>
     <div id="login-failed" style="display:none" class="alert alert-danger" role="alert">로그인에 실패하였습니다.</div>
@@ -79,8 +81,8 @@
             url: `/api/posts`,
             contentType: "application/json",
             data: JSON.stringify({
-                title: "제목입니다2",
-                content: "반갑답니다2"
+                title: "고민이 있어요",
+                content: "딸기가 먹고싶어요"
             }),
             success: function (response, textStatus, request) {
                 console.log("성공!");
@@ -107,6 +109,26 @@
                 console.log("실패..");
                 console.log(response);
                 console.log(request);
+            }
+        })
+    }
+
+    function comment(){
+        console.log("comment proc .....");
+        console.log("my token : " + $.cookie("token"));
+        console.log("------------------");
+        $.ajax({
+            type: "POST",
+            url: `/api/comments/32`,
+            contentType: "application/json",
+            data: JSON.stringify({
+                comment: "댓글입니다."
+            }),
+            success: function (response, textStatus, request) {
+                console.log("성공!");
+            },
+            error: function(){
+                console.log("실패..");
             }
         })
     }
