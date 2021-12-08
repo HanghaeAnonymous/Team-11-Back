@@ -1,5 +1,6 @@
 package com.anonymous.mentalcare.controller;
 
+import com.anonymous.mentalcare.dto.CommentDetailResponseDto;
 import com.anonymous.mentalcare.dto.CommentRequestDto;
 import com.anonymous.mentalcare.dto.FeedCommentResponseDto;
 import com.anonymous.mentalcare.security.UserDetailsImpl;

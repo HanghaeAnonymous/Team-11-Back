@@ -1,6 +1,7 @@
 package com.anonymous.mentalcare.dto;
 
 
+import com.anonymous.mentalcare.models.Comment;
 import com.anonymous.mentalcare.models.Post;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
