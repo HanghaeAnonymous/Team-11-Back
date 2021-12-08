@@ -32,17 +32,18 @@ public class CommentService {
 
     //댓글로 게시글 조회
     public CommentDetailResponseDto readCommentsDetail(Long commentId, User user) {
-        Optional<Post> post = postRepository.findByUser(user);
         Optional<Comment> comment = commentRepository.findByCommentId(commentId);
 
-        if (!Objects.equals(comment.get().getUser().getId(), user.getUserId())) {
-            throw new IllegalArgumentException("댓글작성자가 아닙니다.");
+
+        if (!comment.isPresent()) {
+            throw new NullPointerException("댓글작성자가 아닙니다.");
         }
         List<FeedCommentResponseDto> commentList = new ArrayList<>();
-        for (Comment comments : post.get().getCommentList()) {
+        for (Comment comments : comment.get().getPost().getCommentList()) {
             commentList.add(new FeedCommentResponseDto(comments));
         }
-            return new CommentDetailResponseDto(post.get(), commentList);
+            return new CommentDetailResponseDto(comment.get(), commentList);
+
 
     }
 }
