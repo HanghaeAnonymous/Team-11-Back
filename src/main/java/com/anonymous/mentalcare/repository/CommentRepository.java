@@ -10,6 +10,6 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
 
     List<Comment> findAllByUser(User user);
     
-        //생성일자 순 내림차순
-    List<Comment> findAllByCommentIdOrderByCreatedAtDesc(Long commentId);
+        
+    Optional<Comment> findByCommentId(Long commentId);.
 }
