@@ -49,7 +49,11 @@
                 password: $('#password').val()
             }),
             success: function (response, textStatus, request) {
+                console.log(response);
+                console.log(request);
+                console.log(textStatus);
                 const jwtToken = request.getResponseHeader("Authorization");
+                console.log(jwtToken);
 
 
                 if (jwtToken) {
