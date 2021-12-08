@@ -57,7 +57,7 @@ public class PostService {
     }
 
     public Post savePostService(PostDto.PostWrittenRequestDto postWrittenRequestDto, UserDetailsImpl userDetails){
-        Post post = new Post(postWrittenRequestDto,userDetails);
+        Post post = new Post(postWrittenRequestDto,userDetails.getUser());
         postRepository.save(post);
         return post;
     }

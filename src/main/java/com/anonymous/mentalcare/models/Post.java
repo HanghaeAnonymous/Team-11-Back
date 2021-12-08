@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,7 +22,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long postId;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade=CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(nullable = false)
     private User user;
 
@@ -32,22 +33,20 @@ public class Post {
     private String content;
 
     @OneToMany(mappedBy = "post")
-    private List<Comment> commentList;
+    private List<Comment> commentList = new ArrayList<>();
 
     @OneToMany(mappedBy = "post")
-    private List<ReadingPost> readingPostList;
+    private List<ReadingPost> readingPostList = new ArrayList<>();;
 
     public void addComment(Comment comment) {
         comment.setPost(this);
         this.getCommentList().add(comment);
     }
 
-    public Post(PostDto.PostWrittenRequestDto postWrittenRequestDto, UserDetailsImpl userDetails){
-        this.user = userDetails.getUser();
+    public Post(PostDto.PostWrittenRequestDto postWrittenRequestDto, User user){
+        this.user = user;
         this.title = postWrittenRequestDto.getTitle();
         this.content = postWrittenRequestDto.getContent();
-        this.commentList = null;
-        this.readingPostList = null;
     }
 
     public void updatePost(PostDto.PostUpdateRequestDto postUpdateRequestDto){

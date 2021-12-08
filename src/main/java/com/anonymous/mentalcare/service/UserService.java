@@ -39,12 +39,6 @@ public class UserService {
             errorMessage = "닉네임은 숫자와 영문자 조합으로 3~20자리를 사용해야합니다.";
             throw new IllegalArgumentException(errorMessage);
         }
-        // 패스워드 속에 아이디값 중복 없애기
-        if (signupRequestDto.getPassword().contains(username) || username.contains(signupRequestDto.getPassword())) {
-            errorMessage = "ID을 포함한 비번은 사용불가합니다.";
-//            throw new IllegalArgumentException(errorMessage);
-            return errorMessage;
-        }
 
         if (!signupRequestDto.getPassword().equals(signupRequestDto.getPasswordCheck())) {
             errorMessage = "비밀번호가 일치하지 않습니다.";
@@ -56,6 +50,10 @@ public class UserService {
 
         User user = new User(username, password);
         userRepository.save(user);
+        System.out.println("회원가입 요청---------");
+        System.out.println("username : " + user.getUserId());
+        System.out.println("password : " + user.getPassword());
+        System.out.println("회원가입 처리 완료-----");
         return errorMessage;
     }
 
