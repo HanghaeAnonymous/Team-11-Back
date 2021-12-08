@@ -18,11 +18,12 @@ public class CommentDetailResponseDto {
     private String content;
     private List<FeedCommentResponseDto> comments;
 
-    public CommentDetailResponseDto(Post post, List<FeedCommentResponseDto> comments) {
-        this.title = post.getTitle();
-        this.content = post.getContent();
+    public CommentDetailResponseDto(Comment comment, List<FeedCommentResponseDto> comments) {
+        this.title = comment.getPost().getTitle();
+        this.content = comment.getPost().getContent();
         this.comments = comments;
     }
+
 
 }
 
