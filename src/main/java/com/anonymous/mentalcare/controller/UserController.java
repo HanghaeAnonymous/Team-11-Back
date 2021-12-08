@@ -32,9 +32,11 @@ public class UserController {
 
     @GetMapping("/api/islogin")
     public UserDetailResponseDto isLogin(@AuthenticationPrincipal UserDetailsImpl userDetails){
+        System.out.println("islogin proc...");
         if(userDetails == null){
             return null;
         }else{
+            System.out.println(userDetails.getUser().getUserId());
             return new UserDetailResponseDto(userDetails.getUsername());
         }
     }
