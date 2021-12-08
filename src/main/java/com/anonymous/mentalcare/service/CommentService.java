@@ -29,12 +29,20 @@ public class CommentService {
 
         commentRepository.save(new Comment(commentRequestDto, userDetails.getUser(), post.get()));
     }
-        //댓글 조회 
-    @Transactional
-    public FeedCommentResponseDto findByCommentId(Long commentId){
-       Comment comment = (Comment) commentRepository.findAllByCommentIdOrderByCreatedAtDesc(commentId);
 
-        return new FeedCommentResponseDto(comment);
+    //댓글로 게시글 조회
+    public CommentDetailResponseDto readCommentsDetail(Long commentId, User user) {
+        Optional<Post> post = postRepository.findByUser(user);
+        Optional<Comment> comment = commentRepository.findByCommentId(commentId);
+
+        if (!Objects.equals(comment.get().getUser().getId(), user.getUserId())) {
+            throw new IllegalArgumentException("댓글작성자가 아닙니다.");
+        }
+        List<FeedCommentResponseDto> commentList = new ArrayList<>();
+        for (Comment comments : post.get().getCommentList()) {
+            commentList.add(new FeedCommentResponseDto(comments));
+        }
+            return new CommentDetailResponseDto(post.get(), commentList);
 
     }
 }
