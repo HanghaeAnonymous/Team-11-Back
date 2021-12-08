@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,5 +15,12 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     Optional<Post> findByPostId(Long postId);
     Optional<Post> findByPostIdAndUser(Long postId, User user);
     List<Post> findAllByUser(User user);
-//    Page<Post> findAllByReadingPostListNot(List<ReadingPost> readingPostList, Pageable pageable);
+
+    Page<Post> findAllByUserNot(User user, Pageable pageable);
+    Page<Post> findAllByPostIdNotIn(List<Long> readingPostIdList, Pageable pageable);
+    Page<Post> findAllByUserNotAndPostIdNotIn(User user, List<Long> readingPostIdList, Pageable pageable);
+
+    long countByUserNotAndPostIdNotIn(User user, List<Long> readingPostIdList);
+    long countByPostIdNotIn(List<Long> readingPostIdList);
+    long countByUserNot(User user);
 }
