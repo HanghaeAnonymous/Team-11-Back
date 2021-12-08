@@ -23,9 +23,11 @@ public class CommentController {
                         @RequestBody CommentRequestDto commentRequestDto){
         commentService.comment(postId, commentRequestDto, userDetails);
     }
-        // 특정 댓글 게시글 조회
+    // 특정 댓글로 게시글 조회
     @GetMapping("/api/comments/{commentId}")
-    public FeedCommentResponseDto getComment(@PathVariable Long commentId) {
-        return  commentService.findByCommentId(commentId);
+    public CommentDetailResponseDto commentDetail(@PathVariable Long commentId,
+                                                  @AuthenticationPrincipal UserDetailsImpl userDtails) {
+        return  commentService.readCommentsDetail(commentId,userDtails.getUser());
     }
+
 }
