@@ -29,4 +29,12 @@ public class CommentService {
 
         commentRepository.save(new Comment(commentRequestDto, userDetails.getUser(), post.get()));
     }
+        //댓글 조회 
+    @Transactional
+    public FeedCommentResponseDto findByCommentId(Long commentId){
+       Comment comment = (Comment) commentRepository.findAllByCommentIdOrderByCreatedAtDesc(commentId);
+
+        return new FeedCommentResponseDto(comment);
+
+    }
 }
