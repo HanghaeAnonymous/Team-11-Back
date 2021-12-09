@@ -85,6 +85,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 // 회원 관리 처리 API 전부를 login 없이 허용
+                .antMatchers("/swagger-resources/**").permitAll()
                 .antMatchers("/**").permitAll()
                 // 그 외 어떤 요청이든 '인증'
                 .anyRequest()
@@ -124,11 +125,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //        skipPathList.add("GET,/css/**");
 
         // h2-console 허용
+        skipPathList.add("GET,/swagger-ui.html");
+        skipPathList.add("GET,/webjars/springfox-swagger-ui/**");
+        skipPathList.add("GET,/v2/**");
+        skipPathList.add("GET,/csrf");
+        skipPathList.add("GET,/swagger-resources/**");
         skipPathList.add("GET,/h2-console/**");
         skipPathList.add("POST,/h2-console/**");
         // 회원 관리 API 허용
         skipPathList.add("GET,/user/**");
+        skipPathList.add("GET,/image/**");
         skipPathList.add("POST,/api/idCheck");
+//        skipPathList.add("POST,/api/images");
         skipPathList.add("POST,/api/signup");
         skipPathList.add("POST,/api/test");
 
