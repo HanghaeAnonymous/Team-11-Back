@@ -2,10 +2,18 @@ package com.anonymous.mentalcare.controller;
 
 import com.anonymous.mentalcare.dto.CommentDetailResponseDto;
 import com.anonymous.mentalcare.dto.CommentRequestDto;
+<<<<<<< HEAD
 import com.anonymous.mentalcare.security.UserDetailsImpl;
 import com.anonymous.mentalcare.service.CommentService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+=======
+import com.anonymous.mentalcare.dto.CommentResponseDto;
+import com.anonymous.mentalcare.dto.FeedCommentResponseDto;
+import com.anonymous.mentalcare.security.UserDetailsImpl;
+import com.anonymous.mentalcare.service.CommentService;
+import io.swagger.models.Response;
+>>>>>>> devleop
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -19,6 +27,7 @@ public class CommentController {
 
     @ApiOperation(value = "댓글 작성하기")
     @PostMapping("/api/comments/{postId}")
+<<<<<<< HEAD
     public ResponseEntity<String> comment(@PathVariable Long postId,
                         @AuthenticationPrincipal UserDetailsImpl userDetails,
                         @RequestBody CommentRequestDto commentRequestDto){
@@ -26,6 +35,15 @@ public class CommentController {
 
         return ResponseEntity.ok()
                 .body("댓글 작성 완료!");
+=======
+    public ResponseEntity<CommentResponseDto> comment(@PathVariable Long postId,
+                                                      @AuthenticationPrincipal UserDetailsImpl userDetails,
+                                                      @RequestBody CommentRequestDto commentRequestDto){
+        System.out.println("comment request user : " + userDetails.getUsername());
+        System.out.println("comment : " + commentRequestDto.getComment());
+
+        return commentService.comment(postId, commentRequestDto, userDetails);
+>>>>>>> devleop
     }
     // 특정 댓글로 게시글 조회
     @ApiOperation(value = "댓글 ID로 게시글 조회하기")
