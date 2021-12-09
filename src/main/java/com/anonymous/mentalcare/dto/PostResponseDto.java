@@ -1,7 +1,5 @@
 package com.anonymous.mentalcare.dto;
 
-import com.anonymous.mentalcare.models.Comment;
-import com.anonymous.mentalcare.models.Post;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,14 +15,6 @@ public class PostResponseDto {
     private Long postId;
     private String title;
     private String content;
+    private String createdAt;
     private List<PostCommentResponseDto> comments;
-
-    public PostResponseDto(Post post) {
-        this.postId = post.getPostId();
-        this.title = post.getTitle();
-        this.content = post.getContent();
-        for(Comment comment:post.getCommentList()){
-            this.comments.add(new PostCommentResponseDto(comment));
-        }
-    }
 }
