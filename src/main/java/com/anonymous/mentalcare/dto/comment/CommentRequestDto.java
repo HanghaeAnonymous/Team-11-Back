@@ -1,4 +1,4 @@
-package com.anonymous.mentalcare.dto.User;
+package com.anonymous.mentalcare.dto.comment;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +9,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class IdCheckRequestDto {
-    private String username;
+public class CommentRequestDto {
+    private String comment;
 }

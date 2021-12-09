@@ -1,8 +1,8 @@
 package com.anonymous.mentalcare.service;
 
-import com.anonymous.mentalcare.dto.FeedCommentResponseDto;
-import com.anonymous.mentalcare.dto.FeedPostResponseDto;
-import com.anonymous.mentalcare.dto.FeedResponseDto;
+import com.anonymous.mentalcare.dto.feed.FeedCommentResponseDto;
+import com.anonymous.mentalcare.dto.feed.FeedPostResponseDto;
+import com.anonymous.mentalcare.dto.feed.FeedResponseDto;
 import com.anonymous.mentalcare.models.Comment;
 import com.anonymous.mentalcare.models.Post;
 import com.anonymous.mentalcare.models.User;

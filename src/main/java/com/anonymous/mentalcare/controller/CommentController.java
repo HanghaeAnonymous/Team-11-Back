@@ -1,7 +1,7 @@
 package com.anonymous.mentalcare.controller;
 
-import com.anonymous.mentalcare.dto.CommentDetailResponseDto;
-import com.anonymous.mentalcare.dto.CommentRequestDto;
+import com.anonymous.mentalcare.dto.comment.CommentDetailResponseDto;
+import com.anonymous.mentalcare.dto.comment.CommentRequestDto;
 import com.anonymous.mentalcare.security.UserDetailsImpl;
 import com.anonymous.mentalcare.service.CommentService;
 import io.swagger.annotations.Api;

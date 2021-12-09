@@ -13,12 +13,12 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class RandomPostCommentResponseDto {
+public class MyPostCommentResponseDto {
     private Long commentId;
     private String comment;
     private String createdAt;
 
-    public RandomPostCommentResponseDto(Comment comment) {
+    public MyPostCommentResponseDto(Comment comment) {
         this.commentId = comment.getCommentId();
         this.comment = comment.getComment();
         this.createdAt = DateFormatChanger.dateFormatChange(comment.getCreatedAt());

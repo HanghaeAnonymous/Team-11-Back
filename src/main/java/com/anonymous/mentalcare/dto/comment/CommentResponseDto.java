@@ -1,4 +1,4 @@
-package com.anonymous.mentalcare.dto;
+package com.anonymous.mentalcare.dto.comment;
 
 import com.anonymous.mentalcare.models.Comment;
 import lombok.AllArgsConstructor;

@@ -1,7 +1,5 @@
-package com.anonymous.mentalcare.dto;
+package com.anonymous.mentalcare.dto.feed;
 
-import com.anonymous.mentalcare.models.Comment;
-import com.anonymous.mentalcare.models.Post;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

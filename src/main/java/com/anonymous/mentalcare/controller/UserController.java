@@ -1,9 +1,9 @@
 package com.anonymous.mentalcare.controller;
 
-import com.anonymous.mentalcare.dto.User.IdCheckRequestDto;
-import com.anonymous.mentalcare.dto.User.IdCheckResponseDto;
-import com.anonymous.mentalcare.dto.User.SignupRequestDto;
-import com.anonymous.mentalcare.dto.User.UserDetailResponseDto;
+import com.anonymous.mentalcare.dto.user.IdCheckRequestDto;
+import com.anonymous.mentalcare.dto.user.IdCheckResponseDto;
+import com.anonymous.mentalcare.dto.user.SignupRequestDto;
+import com.anonymous.mentalcare.dto.user.UserDetailResponseDto;
 import com.anonymous.mentalcare.security.UserDetailsImpl;
 import com.anonymous.mentalcare.service.UserService;
 import io.swagger.annotations.Api;

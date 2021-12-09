@@ -95,9 +95,9 @@ public class PostService {
             throw new NullPointerException("당신의 글이 아니거나 없는 글입니다!");
         }
 
-        List<RandomPostCommentResponseDto> commentList = new ArrayList<>();
+        List<MyPostCommentResponseDto> commentList = new ArrayList<>();
         for(Comment comment:post.get().getCommentList()){
-            commentList.add(new RandomPostCommentResponseDto(comment));
+            commentList.add(new MyPostCommentResponseDto(comment));
         }
 
         return new MyPostResponseDto(post.get(), commentList);

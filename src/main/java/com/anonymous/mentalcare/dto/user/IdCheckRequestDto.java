@@ -1,4 +1,4 @@
-package com.anonymous.mentalcare.dto.User;
+package com.anonymous.mentalcare.dto.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +9,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class IdCheckResponseDto {
-    private boolean result;
+public class IdCheckRequestDto {
+    private String username;
 }

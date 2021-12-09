@@ -17,9 +17,9 @@ public class MyPostResponseDto {
     private Long postId;
     private String title;
     private String content;
-    private List<RandomPostCommentResponseDto> comments;
+    private List<MyPostCommentResponseDto> comments;
 
-    public MyPostResponseDto(Post post, List<RandomPostCommentResponseDto> comments) {
+    public MyPostResponseDto(Post post, List<MyPostCommentResponseDto> comments) {
         this.postId = post.getPostId();
         this.title = post.getTitle();
         this.content = post.getContent();
