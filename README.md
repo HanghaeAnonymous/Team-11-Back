@@ -61,7 +61,10 @@
 
 </br>
 
+
 ## 🔨사용한 기술 스택
+<img width="866" alt="스크린샷 2021-12-09 오후 2 32 42" src="https://user-images.githubusercontent.com/90129613/145340150-0241eb6f-4f6f-4688-9083-11e60ef709c0.png">
+
 
 <code> Back-end </code>
  * Java 8
@@ -88,7 +91,7 @@
 * Git
 * GitHub
 
-## ⚒️ 아키텍처 및 ERD 설계
+## ⚒️ ERD 설계
 
 곧 올리겠습니다..
 
