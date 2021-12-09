@@ -39,12 +39,26 @@ public class CommentService {
         if (!comment.isPresent()) {
             throw new NullPointerException("댓글작성자가 아닙니다.");
         }
-
         List<FeedCommentResponseDto> commentList = new ArrayList<>();
         for (Comment comments : comment.get().getPost().getCommentList()) {
             commentList.add(new FeedCommentResponseDto(comments));
+            System.out.print(comments.getComment() + ", ");
         }
 
+        lookUpReadCommentDetail(comment, user, commentList);
         return new CommentDetailResponseDto(comment.get(), commentList);
+    }
+
+    private void lookUpReadCommentDetail(Optional<Comment> comment, User user, List<FeedCommentResponseDto> commentList) {
+        System.out.println("----comment 조회----");
+        System.out.println("request user : " + user.getUserId());
+        System.out.println("comment owner : " + comment.get().getUser().getUserId());
+        System.out.println("comment content : " + comment.get().getComment());
+
+        System.out.print("comment List : [");
+        for (Comment comments : comment.get().getPost().getCommentList()) {
+            System.out.print(comments.getComment() + ", ");
+        }
+        System.out.println("]");
     }
 }

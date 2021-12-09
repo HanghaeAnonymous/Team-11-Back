@@ -2,7 +2,6 @@ package com.anonymous.mentalcare.controller;
 
 import com.anonymous.mentalcare.dto.MyPostResponseDto;
 import com.anonymous.mentalcare.dto.PostDto;
-import com.anonymous.mentalcare.dto.PostResponseDto;
 import com.anonymous.mentalcare.dto.RandomPostResponseDto;
 import com.anonymous.mentalcare.models.Post;
 import com.anonymous.mentalcare.security.UserDetailsImpl;
