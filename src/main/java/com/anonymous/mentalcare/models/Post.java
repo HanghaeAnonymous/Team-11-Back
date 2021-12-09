@@ -17,9 +17,9 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Post {
+public class Post extends Timestamped{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postId;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -36,7 +36,7 @@ public class Post {
     private List<Comment> commentList = new ArrayList<>();
 
     @OneToMany(mappedBy = "post")
-    private List<ReadingPost> readingPostList = new ArrayList<>();;
+    private List<ReadingPost> readingPostList = new ArrayList<>();
 
     public void addComment(Comment comment) {
         comment.setPost(this);
