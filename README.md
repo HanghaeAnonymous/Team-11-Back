@@ -93,14 +93,18 @@
 
 ## ⚒️ ERD 설계
 
-<img src="https://user-images.githubusercontent.com/90129613/145346601-4e70b53b-3291-47f9-b2b9-d06ba456ef9a.png" width="600" height="500"/>
+<img src="https://user-images.githubusercontent.com/90129613/145379852-492a34b3-0559-46f4-9ec7-731eda03e95a.png" width="600" height="500"/>
 
 
 ## ✌🏻 개인 역할
 
 <code>정영빈</code> 게시글 작성&수정&삭제 ,사진 업로드 
+</br>
+
 
 <code>김용빈</code> 아이디 중복 검사, 랜덤 & 내가 작성한 게시글 조회, 댓글 작성, 피드 페이지
+</br>
+
 
 <code>백정수</code> 로그인, 회원가입, 내가 작성한 댓글 조회 
 
@@ -111,9 +115,14 @@
 ## 📝 후기 및 팀 노션 페이지
 
 <code>정영빈</code> 
+</br>
 
 <code>김용빈</code> 
+</br>
+
 
 <code>백정수</code>  
+</br>
+
 
 <code>팀 노션 페이지</code> [익명의 멘탈케어](https://chrome-armadillo-b80.notion.site/c96fcf057d404cb98d18c01cb404aaa7)
