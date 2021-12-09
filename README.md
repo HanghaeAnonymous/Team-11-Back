@@ -93,7 +93,7 @@
 
 ## ⚒️ ERD 설계
 
-곧 올리겠습니다..
+![image](https://user-images.githubusercontent.com/90129613/145344695-b6cb300e-6b2a-44bc-86f0-d7d11bdde55c.png)
 
 
 ## ✌🏻 개인 역할
