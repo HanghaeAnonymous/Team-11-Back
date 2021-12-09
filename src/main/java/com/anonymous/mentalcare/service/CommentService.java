@@ -11,8 +11,6 @@ import com.anonymous.mentalcare.repository.CommentRepository;
 import com.anonymous.mentalcare.repository.PostRepository;
 import com.anonymous.mentalcare.security.UserDetailsImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -25,7 +23,7 @@ public class CommentService {
     private final PostRepository postRepository;
     private final CommentRepository commentRepository;
 
-    public ResponseEntity<CommentResponseDto> comment(Long postId, CommentRequestDto commentRequestDto, UserDetailsImpl userDetails) {
+    public CommentResponseDto comment(Long postId, CommentRequestDto commentRequestDto, UserDetailsImpl userDetails) {
         Optional<Post> post = postRepository.findByPostId(postId);
 
         if(!post.isPresent()){
@@ -33,9 +31,8 @@ public class CommentService {
         }
 
         Comment comment = commentRepository.save(new Comment(commentRequestDto, userDetails.getUser(), post.get()));
-        CommentResponseDto commentResponseDto = new CommentResponseDto(comment);
 
-        return new ResponseEntity<>(commentResponseDto, HttpStatus.OK);
+        return new CommentResponseDto(comment);
     }
 
     //댓글로 게시글 조회
@@ -51,11 +48,11 @@ public class CommentService {
             System.out.print(comments.getComment() + ", ");
         }
 
-        lookUpReadCommentDetail(comment, user, commentList);
+        lookUpReadCommentDetail(comment, user);
         return new CommentDetailResponseDto(comment.get(), commentList);
     }
 
-    private void lookUpReadCommentDetail(Optional<Comment> comment, User user, List<FeedCommentResponseDto> commentList) {
+    private void lookUpReadCommentDetail(Optional<Comment> comment, User user) {
         System.out.println("----comment 조회----");
         System.out.println("request user : " + user.getUserId());
         System.out.println("comment owner : " + comment.get().getUser().getUserId());
