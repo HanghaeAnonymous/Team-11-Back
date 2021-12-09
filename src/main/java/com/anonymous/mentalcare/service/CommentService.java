@@ -48,7 +48,6 @@ public class CommentService {
         List<FeedCommentResponseDto> commentList = new ArrayList<>();
         for (Comment comments : comment.get().getPost().getCommentList()) {
             commentList.add(new FeedCommentResponseDto(comments));
-            System.out.print(comments.getComment() + ", ");
         }
 
         lookUpReadCommentDetail(comment, user);
