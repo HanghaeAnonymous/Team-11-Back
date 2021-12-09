@@ -34,6 +34,9 @@
 
 
 ## 🏷 API Table
+<details>
+ <summary>자세히 보기</summary>
+ 
 |기능|Method|URL|Request|Response|
 |:-----:|:----:|----|----|----|
 |로그인 요청|POST|/user/login|{username: "iamuser",</br>password: "1234"}| |
@@ -51,6 +54,8 @@
 |댓글</br> 작성|POST|/api/comments/{postId}|{comment:"댓글"}||
 |피드</br>페이지|GET|/api/feeds||[myPosts:[{</br>postId:1</br>title:"제목",</br>content:"내용",},</br>{postId:2,</br>title:"제목2",</br>content"내용2"}],</br>myComments:[{</br>commentId:1,</br>comment:"댓글",</br>createdAt:LocalDateTime},</br>{commentId:2,</br>comment:"댓글2",</br>createdAt:LocaldateTime}]</br>]|
 
+</details>
+
 
 
 </br>
@@ -66,6 +71,7 @@
  * QureyDSL
  * MySQL
  * JWT
+ * CORS
 
 <code> Front-end </code>
  * React [Front-end 개발Page](https://github.com/HanghaeAnonymous/Team-11-Front)
@@ -106,4 +112,4 @@
 
 <code>백정수</code>  
 
-<code>팀 노션 페이지</code> [익명의 렌탈케어](https://chrome-armadillo-b80.notion.site/c96fcf057d404cb98d18c01cb404aaa7)
+<code>팀 노션 페이지</code> [익명의 멘탈케어](https://chrome-armadillo-b80.notion.site/c96fcf057d404cb98d18c01cb404aaa7)
