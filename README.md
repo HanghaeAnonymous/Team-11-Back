@@ -63,6 +63,7 @@
 
 
 ## 🔨사용한 기술 스택
+
 <img width="866" alt="스크린샷 2021-12-09 오후 2 32 42" src="https://user-images.githubusercontent.com/90129613/145340150-0241eb6f-4f6f-4688-9083-11e60ef709c0.png">
 
 
@@ -93,7 +94,7 @@
 
 ## ⚒️ ERD 설계
 
-<img src="https://user-images.githubusercontent.com/90129613/145379852-492a34b3-0559-46f4-9ec7-731eda03e95a.png" width="600" height="500"/>
+<img src="https://user-images.githubusercontent.com/90129613/145414719-0a6e457f-a0eb-4610-8f4d-9f963b5eb932.png" width="600" height="500"/>
 
 
 ## ✌🏻 개인 역할
