@@ -1,9 +1,9 @@
 package com.anonymous.mentalcare.service;
 
 
-import com.anonymous.mentalcare.dto.User.IdCheckRequestDto;
-import com.anonymous.mentalcare.dto.User.IdCheckResponseDto;
-import com.anonymous.mentalcare.dto.User.SignupRequestDto;
+import com.anonymous.mentalcare.dto.user.IdCheckRequestDto;
+import com.anonymous.mentalcare.dto.user.IdCheckResponseDto;
+import com.anonymous.mentalcare.dto.user.SignupRequestDto;
 import com.anonymous.mentalcare.models.User;
 import com.anonymous.mentalcare.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

@@ -1,8 +1,8 @@
-package com.anonymous.mentalcare.dto;
+package com.anonymous.mentalcare.dto.comment;
 
 
+import com.anonymous.mentalcare.dto.feed.FeedCommentResponseDto;
 import com.anonymous.mentalcare.models.Comment;
-import com.anonymous.mentalcare.models.Post;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

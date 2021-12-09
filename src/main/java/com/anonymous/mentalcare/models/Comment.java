@@ -1,8 +1,6 @@
 package com.anonymous.mentalcare.models;
 
-import com.anonymous.mentalcare.dto.CommentRequestDto;
-import com.anonymous.mentalcare.security.UserDetailsImpl;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.anonymous.mentalcare.dto.comment.CommentRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -1,6 +1,6 @@
 package com.anonymous.mentalcare.controller;
 
-import com.anonymous.mentalcare.dto.FeedResponseDto;
+import com.anonymous.mentalcare.dto.feed.FeedResponseDto;
 import com.anonymous.mentalcare.security.UserDetailsImpl;
 import com.anonymous.mentalcare.service.FeedService;
 import io.swagger.annotations.Api;
