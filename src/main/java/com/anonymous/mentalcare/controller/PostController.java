@@ -62,6 +62,7 @@ public class PostController {
     public ResponseEntity<ImageDto> imageTest(@RequestParam("file") MultipartFile file) throws IOException {
 
         String path = "/image/";
+        //String saveLocation = "/home/ubuntu/image/";
         String saveLocation = "/Users/jeong-yeongbin/Desktop/project/Team-11-Back/src/main/resources/static/image/";
 
         // 같은 이름의 이미지 파일을 방지하고자 램덤함 UUID를 생성해서 파일이름앞에 붙힌다.
