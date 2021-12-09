@@ -18,6 +18,7 @@ public class RandomPostResponseDto {
     private Long postId;
     private String title;
     private String content;
+    private String imageUrl;
     private String createdAt;
     private List<RandomPostCommentResponseDto> comments;
 
@@ -25,6 +26,7 @@ public class RandomPostResponseDto {
         this.postId = post.getPostId();
         this.title = post.getTitle();
         this.content = post.getContent();
+        this.imageUrl = post.getImageUrl();
         this.createdAt = DateFormatChanger.dateFormatChange(post.getCreatedAt());
         this.comments = comments;
     }

@@ -18,6 +18,7 @@ public class MyPostResponseDto {
     private Long postId;
     private String title;
     private String content;
+    private String imageUrl;
     private String createdAt;
     private List<MyPostCommentResponseDto> comments;
 
@@ -25,6 +26,7 @@ public class MyPostResponseDto {
         this.postId = post.getPostId();
         this.title = post.getTitle();
         this.content = post.getContent();
+        this.imageUrl = post.getImageUrl();
         this.comments = comments;
         this.createdAt = DateFormatChanger.dateFormatChange(post.getCreatedAt());
     }
