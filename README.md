@@ -78,7 +78,7 @@
  * CORS
 
 <code> Front-end </code>
-*[Front-end 개발Page](https://github.com/HanghaeAnonymous/Team-11-Front)
+* [Front-end 개발Page](https://github.com/HanghaeAnonymous/Team-11-Front)
 
 </br>
 
