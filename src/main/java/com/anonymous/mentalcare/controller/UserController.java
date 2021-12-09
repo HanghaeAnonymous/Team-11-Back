@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @Api(tags = {"로그인"})
 @RequiredArgsConstructor
 @RestController
@@ -35,7 +34,7 @@ public class UserController {
 
     @ApiOperation(value = "로그인 여부 확인")
     @GetMapping("/api/islogin")
-    public ResponseEntity<UserDetailResponseDto> isLogin(@AuthenticationPrincipal UserDetailsImpl userDetails){
+    public ResponseEntity<UserDetailResponseDto> isLogin(@AuthenticationPrincipal UserDetailsImpl userDetails) {
         System.out.println("islogin proc...");
         System.out.println("islogin request user : " + userDetails.getUser().getUserId());
 
@@ -47,7 +46,7 @@ public class UserController {
 
     @ApiOperation(value = "아이디 중복 확인")
     @PostMapping("/api/idCheck")
-    public ResponseEntity<IdCheckResponseDto> idCheck(@RequestBody IdCheckRequestDto idCheckRequestDto){
+    public ResponseEntity<IdCheckResponseDto> idCheck(@RequestBody IdCheckRequestDto idCheckRequestDto) {
         IdCheckResponseDto idCheckResponseDto = userService.idCheck(idCheckRequestDto);
 
         return ResponseEntity.ok()

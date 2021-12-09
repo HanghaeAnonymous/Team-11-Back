@@ -17,18 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class FeedController {
     private final FeedService feedService;
 
-//    @GetMapping("/feeds/{userId}")
-//    public FeedResponseDto getFeed(@PathVariable Long userId){
-//        return feedService.getFeed(userId);
-//    }
-
     @ApiOperation(value = "내가 작성한 글, 댓글 확인하기")
     @GetMapping("/api/feeds")
-    public ResponseEntity<FeedResponseDto> getFeed(@AuthenticationPrincipal UserDetailsImpl userDetails){
+    public ResponseEntity<FeedResponseDto> getFeed(@AuthenticationPrincipal UserDetailsImpl userDetails) {
         System.out.println(userDetails.getUser().getUserId());
         FeedResponseDto feedResponseDto = feedService.getFeed(userDetails.getUser());
 
         return ResponseEntity.ok()
-                        .body(feedResponseDto);
+                .body(feedResponseDto);
     }
 }

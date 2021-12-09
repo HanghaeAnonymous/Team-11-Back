@@ -20,19 +20,20 @@ public class CommentController {
     @ApiOperation(value = "댓글 작성하기")
     @PostMapping("/api/comments/{postId}")
     public ResponseEntity<String> comment(@PathVariable Long postId,
-                        @AuthenticationPrincipal UserDetailsImpl userDetails,
-                        @RequestBody CommentRequestDto commentRequestDto){
+                                          @AuthenticationPrincipal UserDetailsImpl userDetails,
+                                          @RequestBody CommentRequestDto commentRequestDto) {
         commentService.comment(postId, commentRequestDto, userDetails);
 
         return ResponseEntity.ok()
                 .body("댓글 작성 완료!");
     }
+
     // 특정 댓글로 게시글 조회
     @ApiOperation(value = "댓글 ID로 게시글 조회하기")
     @GetMapping("/api/comments/{commentId}")
     public ResponseEntity<CommentDetailResponseDto> commentDetail(@PathVariable Long commentId,
                                                                   @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        CommentDetailResponseDto commentDetailResponseDto = commentService.readCommentsDetail(commentId,userDetails.getUser());
+        CommentDetailResponseDto commentDetailResponseDto = commentService.readCommentsDetail(commentId, userDetails.getUser());
 
         return ResponseEntity.ok()
                 .body(commentDetailResponseDto);
