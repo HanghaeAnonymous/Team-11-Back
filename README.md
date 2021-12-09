@@ -38,7 +38,9 @@
 <details>
  <summary>자세히 보기</summary>
  
-|기능|Method|URL|Request|Response|
+ ![image](https://user-images.githubusercontent.com/90129613/145416387-0d1c54aa-7110-4f2b-b1a4-0dbb90b07e62.png)
+
+<!-- |기능|Method|URL|Request|Response|
 |:-----:|:----:|----|----|----|
 |로그인 요청|POST|/user/login|{username: "iamuser",</br>password: "1234"}| |
 |회원</br>가입|POST|/api/signup|{username:"iamuser"</br>,"password:"1234"</br>,passwordCheck:"1234"}||
@@ -54,7 +56,8 @@
 |내가</br> 댓글을 작성한 게시글 조회|GET|/api/comments/{commentId}||{postId:1,</br>title:"제목",</br>content:"글내용",</br>comments:[{</br>commentId:1,</br>comment:"댓글내용",</br>createdAt:LocalDateTime},</br>{commentId:2,</br>comment:"댓글내용2",</br>createdAt:LocalDateTime}]</br>}|
 |댓글</br> 작성|POST|/api/comments/{postId}|{comment:"댓글"}||
 |피드</br>페이지|GET|/api/feeds||[myPosts:[{</br>postId:1</br>title:"제목",</br>content:"내용",},</br>{postId:2,</br>title:"제목2",</br>content"내용2"}],</br>myComments:[{</br>commentId:1,</br>comment:"댓글",</br>createdAt:LocalDateTime},</br>{commentId:2,</br>comment:"댓글2",</br>createdAt:LocaldateTime}]</br>]|
-
+ -->
+ 
 </details>
 
 
