@@ -41,7 +41,10 @@ public class CommentService {
 
         if (!comment.isPresent()) {
             throw new NullPointerException("유효하지 않은 댓글입니다.");
-        } else if (!comment.get().getUser().equals(user)) {
+        }
+        lookUpReadCommentDetail(comment.get(), user);
+
+        if (!comment.get().getUser().getId().equals(user.getId())) {
             throw new IllegalArgumentException("댓글 작성자가 아닙니다.");
         }
 
@@ -50,18 +53,17 @@ public class CommentService {
             commentList.add(new FeedCommentResponseDto(comments));
         }
 
-        lookUpReadCommentDetail(comment, user);
         return new CommentDetailResponseDto(comment.get(), commentList);
     }
 
-    private void lookUpReadCommentDetail(Optional<Comment> comment, User user) {
+    private void lookUpReadCommentDetail(Comment comment, User user) {
         System.out.println("----comment 조회----");
-        System.out.println("request user : " + user.getUserId());
-        System.out.println("comment owner : " + comment.get().getUser().getUserId());
-        System.out.println("comment content : " + comment.get().getComment());
+        System.out.println("request user Id : " + user.getId());
+        System.out.println("comment owner Id : " + comment.getUser().getId());
+        System.out.println("comment content : " + comment.getComment());
 
         System.out.print("comment List : [");
-        for (Comment comments : comment.get().getPost().getCommentList()) {
+        for (Comment comments : comment.getPost().getCommentList()) {
             System.out.print(comments.getComment() + ", ");
         }
         System.out.println("]");
