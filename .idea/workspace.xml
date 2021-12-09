@@ -4,6 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="2c19aa68-d760-4a70-86b5-aec9d965e397" name="Changes" comment="" />
+=======
     <list default="true" id="2c19aa68-d760-4a70-86b5-aec9d965e397" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/dto/CommentResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.1/executionHistory/executionHistory.bin" afterDir="false" />
@@ -29,6 +32,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/controller/CommentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/anonymous/mentalcare/service/CommentService.java" afterDir="false" />
     </list>
+>>>>>>> devleop
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,6 +198,7 @@
       <workItem from="1638861388915" duration="13000" />
       <workItem from="1638861407351" duration="4000" />
       <workItem from="1638861419078" duration="3118000" />
+      <workItem from="1639007983582" duration="3192000" />
     </task>
     <servers />
   </component>

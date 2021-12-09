@@ -35,6 +35,9 @@ public class PostService {
          *
          *  문제점2 : 이미 읽은 글 목록을 어떻게 받아와야 할 지 모르겠다. for문 돌리면 되긴 하는데, 그러면 페이징을 한 보람이 없다.
          *  해결방법 : findAllByUserNotAndPostIdNotIn 사용해서 풀어냈다. 코드가 너무 지저분해졌다.
+         *
+         *  문제점3 : NotIn 연산자에 들어갈 때 들어갈 readingPostList의 size가 0이면 레코드가 출력이 안 된다!!@!!!
+         *  해결방법 : 당장 미봉책으로 size가 0일 땐 일반 검색 하는 식으로 했는데, 멘토님 조언으로 QueryDSL로 변경 예정.
          */
 
         List<ReadingPost> readingPostList = readingPostRepository.findAllByUser(user);

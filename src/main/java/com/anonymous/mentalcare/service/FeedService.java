@@ -29,10 +29,10 @@ public class FeedService {
 
         System.out.println("postList Size : " + postList.size());
         System.out.println("commentList Size : " + commentList.size());
-        for(Post post: postList){
+        for (Post post : postList) {
             feedPostResponseDtoList.add(new FeedPostResponseDto(post));
         }
-        for(Comment comment: commentList){
+        for (Comment comment : commentList) {
             feedCommentResponseDtoList.add(new FeedCommentResponseDto(comment));
         }
 
