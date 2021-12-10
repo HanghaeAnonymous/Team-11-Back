@@ -29,6 +29,16 @@ public class CommentController {
                 .body("댓글 작성 완료!");
     }
 
+    @ApiOperation(value = "댓글 삭제하기")
+    @DeleteMapping("/api/comments/{commentId}")
+    public ResponseEntity<String> commentDelete(@PathVariable Long commentId,
+                                                @AuthenticationPrincipal UserDetailsImpl userDetails){
+        commentService.commentDelete(commentId, userDetails);
+
+        return ResponseEntity.ok()
+                .body("댓글 삭제 완료!");
+    }
+
     @ExceptionHandler({IllegalArgumentException.class, NullPointerException.class})
     public ResponseEntity<RestApiException> exceptionHandler(Exception e) {
         return ResponseEntity.badRequest()
