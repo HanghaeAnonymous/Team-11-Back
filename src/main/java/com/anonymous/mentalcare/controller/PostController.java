@@ -3,12 +3,14 @@ package com.anonymous.mentalcare.controller;
 import com.anonymous.mentalcare.dto.post.PostDto;
 import com.anonymous.mentalcare.dto.post.RandomPostResponseDto;
 import com.anonymous.mentalcare.dto.image.ImageDto;
+import com.anonymous.mentalcare.exception.RestApiException;
 import com.anonymous.mentalcare.security.UserDetailsImpl;
 import com.anonymous.mentalcare.service.ImageService;
 import com.anonymous.mentalcare.service.PostService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
@@ -65,5 +67,11 @@ public class PostController {
     public ResponseEntity<ImageDto> imageTest(@RequestParam("file") MultipartFile file) throws IOException {
         return ResponseEntity.ok()
                 .body(imageService.imageUpload(file));
+    }
+
+    @ExceptionHandler({IllegalArgumentException.class, NullPointerException.class})
+    public ResponseEntity<RestApiException> exceptionHandler(Exception e) {
+        return ResponseEntity.badRequest()
+                .body(new RestApiException(e.getMessage(), HttpStatus.BAD_REQUEST));
     }
 }

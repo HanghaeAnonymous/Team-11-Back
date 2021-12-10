@@ -4,6 +4,7 @@ import com.anonymous.mentalcare.dto.user.IdCheckRequestDto;
 import com.anonymous.mentalcare.dto.user.IdCheckResponseDto;
 import com.anonymous.mentalcare.dto.user.SignupRequestDto;
 import com.anonymous.mentalcare.dto.user.UserDetailResponseDto;
+import com.anonymous.mentalcare.exception.RestApiException;
 import com.anonymous.mentalcare.models.User;
 import com.anonymous.mentalcare.security.UserDetailsImpl;
 import com.anonymous.mentalcare.service.UserService;
@@ -11,12 +12,10 @@ import com.anonymous.mentalcare.util.ValidateChecker;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Api(tags = {"로그인"})
 @RequiredArgsConstructor
@@ -55,5 +54,11 @@ public class UserController {
 
         return ResponseEntity.ok()
                 .body(idCheckResponseDto);
+    }
+
+    @ExceptionHandler({IllegalArgumentException.class, NullPointerException.class})
+    public ResponseEntity<RestApiException> exceptionHandler(Exception e) {
+        return ResponseEntity.badRequest()
+                .body(new RestApiException(e.getMessage(), HttpStatus.BAD_REQUEST));
     }
 }
