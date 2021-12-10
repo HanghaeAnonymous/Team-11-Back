@@ -27,15 +27,4 @@ public class CommentController {
         return ResponseEntity.ok()
                 .body("댓글 작성 완료!");
     }
-
-    // 특정 댓글로 게시글 조회
-    @ApiOperation(value = "댓글 ID로 게시글 조회하기")
-    @GetMapping("/api/comments/{commentId}")
-    public ResponseEntity<CommentDetailResponseDto> commentDetail(@PathVariable Long commentId,
-                                                                  @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        CommentDetailResponseDto commentDetailResponseDto = commentService.readCommentsDetail(commentId, userDetails.getUser());
-
-        return ResponseEntity.ok()
-                .body(commentDetailResponseDto);
-    }
 }

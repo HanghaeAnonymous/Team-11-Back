@@ -1,4 +1,4 @@
-package com.anonymous.mentalcare.dto;
+package com.anonymous.mentalcare.dto.feed;
 
 import com.anonymous.mentalcare.models.Comment;
 import com.anonymous.mentalcare.models.Post;
@@ -8,26 +8,30 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class RandomPostResponseDto {
+public class MyPostResponseDto {
     private Long postId;
     private String title;
     private String content;
-    private String imageUrl;
     private String createdAt;
-    private List<RandomPostCommentResponseDto> comments;
+    private String imageUrl;
+    private List<MyPostCommentResponseDto> comments = new ArrayList<>();
 
-    public RandomPostResponseDto(Post post, List<RandomPostCommentResponseDto> comments) {
+    public MyPostResponseDto(Post post) {
         this.postId = post.getPostId();
         this.title = post.getTitle();
         this.content = post.getContent();
         this.imageUrl = post.getImageUrl();
         this.createdAt = DateFormatChanger.dateFormatChange(post.getCreatedAt());
-        this.comments = comments;
+
+        for(Comment comment: post.getCommentList()){
+            this.comments.add(new MyPostCommentResponseDto(comment));
+        }
     }
 }

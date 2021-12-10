@@ -1,20 +1,17 @@
 package com.anonymous.mentalcare.service;
 
-import com.anonymous.mentalcare.dto.comment.CommentDetailResponseDto;
 import com.anonymous.mentalcare.dto.comment.CommentRequestDto;
 import com.anonymous.mentalcare.dto.comment.CommentResponseDto;
-import com.anonymous.mentalcare.dto.feed.FeedCommentResponseDto;
 import com.anonymous.mentalcare.models.Comment;
 import com.anonymous.mentalcare.models.Post;
 import com.anonymous.mentalcare.models.User;
 import com.anonymous.mentalcare.repository.CommentRepository;
 import com.anonymous.mentalcare.repository.PostRepository;
 import com.anonymous.mentalcare.security.UserDetailsImpl;
+import com.anonymous.mentalcare.util.ValidateChecker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -24,48 +21,19 @@ public class CommentService {
     private final CommentRepository commentRepository;
 
     public CommentResponseDto comment(Long postId, CommentRequestDto commentRequestDto, UserDetailsImpl userDetails) {
-        Optional<Post> post = postRepository.findByPostId(postId);
+        User user = ValidateChecker.userDetailsIsNull(userDetails);
 
+        if(commentRequestDto.getComment().trim().equals("")){
+            throw new IllegalArgumentException("내용을 작성해주세요.");
+        }
+
+        Optional<Post> post = postRepository.findByPostId(postId);
         if (!post.isPresent()) {
             throw new NullPointerException("유효하지 않거나 이미 삭제된 게시글입니다.");
         }
 
-        Comment comment = commentRepository.save(new Comment(commentRequestDto, userDetails.getUser(), post.get()));
+        Comment comment = commentRepository.save(new Comment(commentRequestDto, user, post.get()));
 
         return new CommentResponseDto(comment);
-    }
-
-    //댓글로 게시글 조회
-    public CommentDetailResponseDto readCommentsDetail(Long commentId, User user) {
-        Optional<Comment> comment = commentRepository.findByCommentId(commentId);
-
-        if (!comment.isPresent()) {
-            throw new NullPointerException("유효하지 않은 댓글입니다.");
-        }
-        lookUpReadCommentDetail(comment.get(), user);
-
-        if (!comment.get().getUser().getId().equals(user.getId())) {
-            throw new IllegalArgumentException("댓글 작성자가 아닙니다.");
-        }
-
-        List<FeedCommentResponseDto> commentList = new ArrayList<>();
-        for (Comment comments : comment.get().getPost().getCommentList()) {
-            commentList.add(new FeedCommentResponseDto(comments));
-        }
-
-        return new CommentDetailResponseDto(comment.get(), commentList);
-    }
-
-    private void lookUpReadCommentDetail(Comment comment, User user) {
-        System.out.println("----comment 조회----");
-        System.out.println("request user Id : " + user.getId());
-        System.out.println("comment owner Id : " + comment.getUser().getId());
-        System.out.println("comment content : " + comment.getComment());
-
-        System.out.print("comment List : [");
-        for (Comment comments : comment.getPost().getCommentList()) {
-            System.out.print(comments.getComment() + ", ");
-        }
-        System.out.println("]");
     }
 }

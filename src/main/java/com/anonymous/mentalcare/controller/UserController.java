@@ -4,8 +4,10 @@ import com.anonymous.mentalcare.dto.user.IdCheckRequestDto;
 import com.anonymous.mentalcare.dto.user.IdCheckResponseDto;
 import com.anonymous.mentalcare.dto.user.SignupRequestDto;
 import com.anonymous.mentalcare.dto.user.UserDetailResponseDto;
+import com.anonymous.mentalcare.models.User;
 import com.anonymous.mentalcare.security.UserDetailsImpl;
 import com.anonymous.mentalcare.service.UserService;
+import com.anonymous.mentalcare.util.ValidateChecker;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -29,16 +31,18 @@ public class UserController {
         userService.registerUser(requestDto);
 
         return ResponseEntity.ok()
-                .body("회원가입 완료!");
+                .body("회원가입 완료");
     }
 
     @ApiOperation(value = "로그인 여부 확인")
     @GetMapping("/api/islogin")
     public ResponseEntity<UserDetailResponseDto> isLogin(@AuthenticationPrincipal UserDetailsImpl userDetails) {
-        System.out.println("islogin proc...");
-        System.out.println("islogin request user : " + userDetails.getUser().getUserId());
+        User user = ValidateChecker.userDetailsIsNull(userDetails);
 
-        UserDetailResponseDto userDetailResponseDto = new UserDetailResponseDto(userDetails.getUsername());
+        System.out.println("islogin proc...");
+        System.out.println("islogin request user : " + user.getUserId());
+
+        UserDetailResponseDto userDetailResponseDto = new UserDetailResponseDto(user.getUserId());
 
         return ResponseEntity.ok()
                 .body(userDetailResponseDto);

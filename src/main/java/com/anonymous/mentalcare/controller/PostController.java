@@ -1,8 +1,7 @@
 package com.anonymous.mentalcare.controller;
 
-import com.anonymous.mentalcare.dto.MyPostResponseDto;
-import com.anonymous.mentalcare.dto.PostDto;
-import com.anonymous.mentalcare.dto.RandomPostResponseDto;
+import com.anonymous.mentalcare.dto.post.PostDto;
+import com.anonymous.mentalcare.dto.post.RandomPostResponseDto;
 import com.anonymous.mentalcare.dto.image.ImageDto;
 import com.anonymous.mentalcare.security.UserDetailsImpl;
 import com.anonymous.mentalcare.service.ImageService;
@@ -29,18 +28,9 @@ public class PostController {
     @ApiOperation(value = "랜덤 게시글 불러오기")
     @GetMapping("/api/posts")
     public ResponseEntity<RandomPostResponseDto> getRandomPost(@AuthenticationPrincipal UserDetailsImpl userDetails) {
-        RandomPostResponseDto randomPostResponseDto = postService.getRandomPost(userDetails.getUser());
+        RandomPostResponseDto randomPostResponseDto = postService.getRandomPost(userDetails);
         return ResponseEntity.ok()
                 .body(randomPostResponseDto);
-    }
-
-    @ApiOperation(value = "나의 특정 게시글 불러오기")
-    @GetMapping("/api/posts/{postId}")
-    public ResponseEntity<MyPostResponseDto> getMyPost(@PathVariable Long postId,
-                                                       @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        MyPostResponseDto myPostResponseDto = postService.getMyPost(postId, userDetails.getUser());
-        return ResponseEntity.ok()
-                .body(myPostResponseDto);
     }
 
     @ApiOperation(value = "게시판 글 올리기")
@@ -63,8 +53,9 @@ public class PostController {
 
     @ApiOperation(value = "게시판 글 삭제")
     @DeleteMapping("/api/posts/{postId}")
-    public ResponseEntity<String> deletePost(@PathVariable Long postId) {
-        postService.deletePost(postId);
+    public ResponseEntity<String> deletePost(@PathVariable Long postId,
+                                             @AuthenticationPrincipal UserDetailsImpl userDetails) {
+        postService.deletePost(postId, userDetails);
         return ResponseEntity.ok()
                 .body("게시글 삭제 성공");
     }
