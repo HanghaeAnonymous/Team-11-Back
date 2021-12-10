@@ -27,6 +27,7 @@ public class MyPostResponseDto {
         this.postId = post.getPostId();
         this.title = post.getTitle();
         this.content = post.getContent();
+        this.imageUrl = post.getImageUrl();
         this.createdAt = DateFormatChanger.dateFormatChange(post.getCreatedAt());
 
         for(Comment comment: post.getCommentList()){
