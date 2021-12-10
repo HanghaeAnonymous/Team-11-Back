@@ -17,10 +17,8 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     List<Post> findAllByUser(User user);
 
     Page<Post> findAllByUserNot(User user, Pageable pageable);
-    Page<Post> findAllByPostIdNotIn(List<Long> readingPostIdList, Pageable pageable);
     Page<Post> findAllByUserNotAndPostIdNotIn(User user, List<Long> readingPostIdList, Pageable pageable);
 
-    long countByUserNotAndPostIdNotIn(User user, List<Long> readingPostIdList);
-    long countByPostIdNotIn(List<Long> readingPostIdList);
     long countByUserNot(User user);
+    long countByUserNotAndPostIdNotIn(User user, List<Long> readingPostIdList);
 }
