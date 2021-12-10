@@ -19,6 +19,7 @@ public class RandomPostResponseDto {
     private Long postId;
     private String title;
     private String content;
+    private String imageUrl;
     private String createdAt;
     private List<RandomPostCommentResponseDto> comments = new ArrayList<>();
 

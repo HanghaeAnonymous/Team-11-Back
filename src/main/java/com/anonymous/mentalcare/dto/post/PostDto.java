@@ -12,6 +12,7 @@ public class PostDto {
     public static class PostWrittenRequestDto{
         private String title;
         private String content;
+        private String imageUrl;
     }
 
     @Getter
