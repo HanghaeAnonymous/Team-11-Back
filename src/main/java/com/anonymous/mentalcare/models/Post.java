@@ -28,6 +28,9 @@ public class Post extends Timestamped{
     @Column(nullable = false, columnDefinition = "LONGTEXT")
     private String content;
 
+    @Column
+    private String imageUrl;
+
     @OneToMany(mappedBy = "post")
     private List<Comment> commentList = new ArrayList<>();
 
@@ -43,6 +46,7 @@ public class Post extends Timestamped{
         this.user = user;
         this.title = postWrittenRequestDto.getTitle();
         this.content = postWrittenRequestDto.getContent();
+        this.imageUrl = postWrittenRequestDto.getImageUrl();
     }
 
     public void updatePost(PostDto.PostUpdateRequestDto postUpdateRequestDto){
