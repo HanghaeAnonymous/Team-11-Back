@@ -31,10 +31,10 @@ public class Post extends Timestamped{
     @Column
     private String imageUrl;
 
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Comment> commentList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<ReadingPost> readingPostList = new ArrayList<>();
 
     public void addComment(Comment comment) {
