@@ -1,4 +1,4 @@
-package com.anonymous.mentalcare.dto;
+package com.anonymous.mentalcare.dto.post;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

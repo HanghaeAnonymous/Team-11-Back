@@ -1,10 +1,6 @@
 package com.anonymous.mentalcare.models;
 
-import com.anonymous.mentalcare.dto.PostDto;
-import com.anonymous.mentalcare.security.UserDetailsImpl;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.anonymous.mentalcare.dto.post.PostDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

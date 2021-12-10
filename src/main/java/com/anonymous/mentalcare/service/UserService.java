@@ -6,6 +6,8 @@ import com.anonymous.mentalcare.dto.user.IdCheckResponseDto;
 import com.anonymous.mentalcare.dto.user.SignupRequestDto;
 import com.anonymous.mentalcare.models.User;
 import com.anonymous.mentalcare.repository.UserRepository;
+import com.anonymous.mentalcare.util.LookUpService;
+import com.anonymous.mentalcare.util.ValidateChecker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,43 +25,27 @@ public class UserService {
 
 
     @Transactional
-    public String registerUser(SignupRequestDto signupRequestDto) {
+    public void registerUser(SignupRequestDto signupRequestDto) {
         String username = signupRequestDto.getUsername();
-        String errorMessage = "";
 
-        // 회원 ID 중복 확인
         Optional<User> found = userRepository.findByUserId(username);
         if (found.isPresent()) {
-            errorMessage = "중복된 사용자 ID 가 존재합니다.";
-            return errorMessage;
-
-        }
-        Matcher match = Pattern.compile(username).matcher(username);
-        if (!match.find()) {
-            errorMessage = "닉네임은 숫자와 영문자 조합으로 3~20자리를 사용해야합니다.";
-            throw new IllegalArgumentException(errorMessage);
+            throw new IllegalArgumentException("중복된 사용자 ID 가 존재합니다.");
         }
 
-        if (!signupRequestDto.getPassword().equals(signupRequestDto.getPasswordCheck())) {
-            errorMessage = "비밀번호가 일치하지 않습니다.";
-            return errorMessage;
-        }
+        // 유효성 검사. 닉네임 3~20자의 대소문자 조합인지 + 비밀번호, 비밀번호확인 일치하는지
+        ValidateChecker.registerValidCheck(signupRequestDto);
+
         String password = passwordEncoder.encode(signupRequestDto.getPassword());
-        // 사용자 ROLE 확인
+        User user = userRepository.save(new User(username, password));
 
-
-        User user = new User(username, password);
-        userRepository.save(user);
-        System.out.println("회원가입 요청---------");
-        System.out.println("username : " + user.getUserId());
-        System.out.println("password : " + user.getPassword());
-        System.out.println("회원가입 처리 완료-----");
-        return errorMessage;
+        // 기록 println 해주는 기능.
+        LookUpService.lookUpSignUpProc(user);
     }
 
     public IdCheckResponseDto idCheck(IdCheckRequestDto idCheckRequestDto) {
         Optional<User> user = userRepository.findByUserId(idCheckRequestDto.getUsername());
-        // isPresent = true 일 때 = 중복, false 출력
+        // isPresent = true 일 때 = 중복이므로 가입 불가(false) 출력
         return new IdCheckResponseDto(!user.isPresent());
     }
 }
