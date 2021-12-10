@@ -20,6 +20,7 @@ public class MyPostResponseDto {
     private String title;
     private String content;
     private String createdAt;
+    private String imageUrl;
     private List<MyPostCommentResponseDto> comments = new ArrayList<>();
 
     public MyPostResponseDto(Post post) {
