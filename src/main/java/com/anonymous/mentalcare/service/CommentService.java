@@ -12,6 +12,7 @@ import com.anonymous.mentalcare.util.ValidateChecker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @Service
@@ -35,5 +36,18 @@ public class CommentService {
         Comment comment = commentRepository.save(new Comment(commentRequestDto, user, post.get()));
 
         return new CommentResponseDto(comment);
+    }
+
+    public void commentDelete(Long commentId, UserDetailsImpl userDetails) {
+        User user = ValidateChecker.userDetailsIsNull(userDetails);
+        Optional<Comment> comment = commentRepository.findById(commentId);
+
+        if(!comment.isPresent()){
+            throw new NullPointerException("존재하지 않는 댓글입니다.");
+        }else if(!comment.get().getUser().getId().equals(user.getId())){
+            throw new IllegalArgumentException("댓글의 작성자만 삭제가 가능합니다.");
+        }
+
+        commentRepository.deleteById(commentId);
     }
 }
