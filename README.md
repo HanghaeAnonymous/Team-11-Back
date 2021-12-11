@@ -12,7 +12,7 @@
  <p> 모르는 사람에게 자신의 고민을 들려주세요, 그리고 들어주세요. 분명히 위로가 될 겁니다.</p>
  <p> 중요 : 한 번 지나친 다른 사람의 고민은 다시는 볼 수 없습니다. 명심하세요! </p>
   
-  Web Site : 도메인 이후 작성예정
+  Web Site : http://anonymousmentalcare.s3-website.ap-northeast-2.amazonaws.com/
 </br>
 
 ## 🧾 와이어 프레임
