@@ -976,6 +976,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="290" parent="284" name="created_at">
       <Position>2</Position>
@@ -1031,108 +1032,115 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="302" parent="286" name="content">
+    <column id="302" parent="286" name="created_at">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>datetime(6)|0s</DataType>
     </column>
-    <column id="303" parent="286" name="title">
+    <column id="303" parent="286" name="modified_at">
       <Position>3</Position>
+      <DataType>datetime(6)|0s</DataType>
+    </column>
+    <column id="304" parent="286" name="content">
+      <Position>4</Position>
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="305" parent="286" name="image_url">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="306" parent="286" name="title">
+      <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="304" parent="286" name="user_id">
-      <Position>4</Position>
+    <column id="307" parent="286" name="user_id">
+      <Position>7</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="305" parent="286" name="created_at">
-      <Position>5</Position>
-      <DataType>datetime(6)|0s</DataType>
-    </column>
-    <column id="306" parent="286" name="modified_at">
-      <Position>6</Position>
-      <DataType>datetime(6)|0s</DataType>
-    </column>
-    <index id="307" parent="286" name="FK72mt33dhhs48hf9gcqrq4fxte">
+    <index id="308" parent="286" name="FK72mt33dhhs48hf9gcqrq4fxte">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="308" parent="286" name="PRIMARY">
+    <key id="309" parent="286" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>post_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="309" parent="286" name="FK72mt33dhhs48hf9gcqrq4fxte">
+    <foreign-key id="310" parent="286" name="FK72mt33dhhs48hf9gcqrq4fxte">
       <ColNames>user_id</ColNames>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="310" parent="287" name="id">
+    <column id="311" parent="287" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="311" parent="287" name="post_post_id">
+    <column id="312" parent="287" name="post_post_id">
       <Position>2</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="312" parent="287" name="user_id">
+    <column id="313" parent="287" name="user_id">
       <Position>3</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="313" parent="287" name="FKg46usswdk5kf39tgs6eet4ru4">
+    <index id="314" parent="287" name="FKg46usswdk5kf39tgs6eet4ru4">
       <ColNames>post_post_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="314" parent="287" name="FKoalgrnnkuybivr8wvomxnanyb">
+    <index id="315" parent="287" name="FKoalgrnnkuybivr8wvomxnanyb">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="315" parent="287" name="PRIMARY">
+    <key id="316" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="316" parent="287" name="FKg46usswdk5kf39tgs6eet4ru4">
+    <foreign-key id="317" parent="287" name="FKg46usswdk5kf39tgs6eet4ru4">
       <ColNames>post_post_id</ColNames>
       <RefTableName>post</RefTableName>
       <RefColNames>post_id</RefColNames>
     </foreign-key>
-    <foreign-key id="317" parent="287" name="FKoalgrnnkuybivr8wvomxnanyb">
+    <foreign-key id="318" parent="287" name="FKoalgrnnkuybivr8wvomxnanyb">
       <ColNames>user_id</ColNames>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="318" parent="288" name="id">
+    <column id="319" parent="288" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="319" parent="288" name="password">
+    <column id="320" parent="288" name="password">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="320" parent="288" name="user_id">
+    <column id="321" parent="288" name="user_id">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="321" parent="288" name="UK_a3imlf41l37utmxiquukk8ajc">
+    <index id="322" parent="288" name="UK_a3imlf41l37utmxiquukk8ajc">
       <ColNames>user_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="322" parent="288" name="PRIMARY">
+    <key id="323" parent="288" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="323" parent="288" name="UK_a3imlf41l37utmxiquukk8ajc">
+    <key id="324" parent="288" name="UK_a3imlf41l37utmxiquukk8ajc">
       <ColNames>user_id</ColNames>
       <UnderlyingIndexName>UK_a3imlf41l37utmxiquukk8ajc</UnderlyingIndexName>
     </key>
