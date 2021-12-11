@@ -20,7 +20,7 @@
 
 
 ## 🎥 시연 영상
- [![Hnet-image](https://user-images.githubusercontent.com/90129613/145665770-a2eb072f-3148-4e3b-afd9-0f9a8105c322.gif)](https://www.youtube.com/watch?v=n08_pEMKvvQ)
+ [![Hnet-image](https://user-images.githubusercontent.com/90129613/145665770-a2eb072f-3148-4e3b-afd9-0f9a8105c322.gif)](https://www.youtube.com/watch?v=n08_pEMKvvQ)<br>
 이미지를 클릭하시면 유튜브 영상으로 이동됩니다.
 
 ## 🧑🏼‍💻 개발기간 및 팀원소개
