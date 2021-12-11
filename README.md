@@ -121,7 +121,7 @@
 
 <code>백정수</code> 로그인, 회원가입, 내가 작성한 댓글 조회 
 
-<code>Trouble Shooting</code>[트러블 슈팅 해결과정](https://chrome-armadillo-b80.notion.site/0c1dc754030248d88bf14c7d8570ddab)
+<code>Trouble Shooting</code>  [트러블 슈팅 해결과정](https://chrome-armadillo-b80.notion.site/0c1dc754030248d88bf14c7d8570ddab)
 
 </br>
 
@@ -140,4 +140,4 @@
 </br>
 
 
-<code>팀 노션 페이지</code> [익명의 멘탈케어](https://chrome-armadillo-b80.notion.site/c96fcf057d404cb98d18c01cb404aaa7)
+<code>팀 노션 페이지</code>  [익명의 멘탈케어](https://chrome-armadillo-b80.notion.site/c96fcf057d404cb98d18c01cb404aaa7)
