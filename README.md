@@ -21,8 +21,7 @@
 
 ## 🎥 시연 영상
  [![Youtube 영상](http://img.youtube.com/vi/n08_pEMKvvQ/0.jpg)](https://www.youtube.com/watch?v=n08_pEMKvvQ) 
- ![Hnet com-image](https://user-images.githubusercontent.com/90129613/145665665-7eaceea7-e44a-4a08-b192-7fb8bf6d5c83.gif)
-
+ 
 
 ## 🧑🏼‍💻 개발기간 및 팀원소개
 ### 기간: 2021.12.06 ~ 2021.12.11 (5일)  
