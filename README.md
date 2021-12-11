@@ -21,8 +21,6 @@
 
 ## 🎥 시연 영상
  [![Youtube 영상](http://img.youtube.com/vi/n08_pEMKvvQ/0.jpg)](https://www.youtube.com/watch?v=n08_pEMKvvQ) 
- 
- <iframe width="1268" height="713" src="https://www.youtube.com/embed/n08_pEMKvvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 🧑🏼‍💻 개발기간 및 팀원소개
 ### 기간: 2021.12.06 ~ 2021.12.11 (5일)  
