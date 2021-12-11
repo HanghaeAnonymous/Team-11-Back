@@ -109,7 +109,7 @@
 <img src="https://user-images.githubusercontent.com/90129613/145414719-0a6e457f-a0eb-4610-8f4d-9f963b5eb932.png" width="600" height="500"/>
 
 
-## ✌🏻 개인 역할
+## ✌🏻 개인 역할 및 트러블 슈팅 해결과정
 
 <code>정영빈</code> 게시글 작성&수정&삭제 ,사진 업로드 
 </br>
@@ -120,6 +120,8 @@
 
 
 <code>백정수</code> 로그인, 회원가입, 내가 작성한 댓글 조회 
+
+<code>Trouble Shooting</code>[트러블 슈팅 해결과정](https://chrome-armadillo-b80.notion.site/0c1dc754030248d88bf14c7d8570ddab)
 
 </br>
 
