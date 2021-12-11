@@ -54,17 +54,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationProvider(jwtAuthProvider);
     }
 
-    @Override
-    public void configure(WebSecurity web) {
-    // h2-console 사용에 대한 허용 (CSRF, FrameOptions 무시)
-        web
-                .ignoring()
-                .antMatchers("/h2-console/**");
-    }
+//    @Override
+//    public void configure(WebSecurity web) {
+//    // h2-console 사용에 대한 허용 (CSRF, FrameOptions 무시)
+//        web
+//                .ignoring()
+//                .antMatchers("/h2-console/**");
+//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable();
+        http.csrf().disable()
+                .authorizeRequests()
+                .antMatchers();
 
         http
                 .cors()
@@ -85,7 +87,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 // 회원 관리 처리 API 전부를 login 없이 허용
-                .antMatchers("/**").permitAll()
+                .antMatchers("/api/signup", "/user/login", "/api/idCheck").permitAll()
                 // 그 외 어떤 요청이든 '인증'
                 .anyRequest()
                 .permitAll()
@@ -124,8 +126,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //        skipPathList.add("GET,/css/**");
 
         // h2-console 허용
-        skipPathList.add("GET,/h2-console/**");
-        skipPathList.add("POST,/h2-console/**");
+//        skipPathList.add("GET,/h2-console/**");
+//        skipPathList.add("POST,/h2-console/**");
         // 회원 관리 API 허용
         skipPathList.add("GET,/user/**");
         skipPathList.add("POST,/api/idCheck");
@@ -135,6 +137,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         skipPathList.add("GET,/image/**");
         skipPathList.add("GET,/");
 //        skipPathList.add("GET,/basic.js");
+        // Swagger 허용
+        skipPathList.add("GET,/swagger-ui.html");
+        skipPathList.add("GET,/swagger-resources/**");
+        skipPathList.add("GET,/webjars/springfox-swagger-ui/**");
+        skipPathList.add("GET,/v2/api-docs");
 
 //        skipPathList.add("GET,/favicon.ico");
 
